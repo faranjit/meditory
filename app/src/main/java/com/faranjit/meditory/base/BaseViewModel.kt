@@ -25,13 +25,13 @@ abstract class BaseViewModel : ViewModel() {
     fun runAsync(block: suspend CoroutineScope.() -> Unit) {
         viewModelScope.launch {
             try {
-//                _spinnerLiveData.value = true
+                loading.value = true
 
                 block.invoke(this)
             } catch (t: Throwable) {
                 Log.e(this@BaseViewModel::class.java.canonicalName, t.message, t)
             } finally {
-//                _spinnerLiveData.value = false
+                loading.value = false
             }
         }
     }

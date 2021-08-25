@@ -1,6 +1,7 @@
 package com.faranjit.meditory
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
@@ -13,4 +14,8 @@ abstract class BaseUnitTest {
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @ExperimentalCoroutinesApi
+    @get:Rule
+    var mainCoroutineRule = MainCoroutineRule()
 }
