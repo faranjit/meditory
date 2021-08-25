@@ -3,12 +3,17 @@ package com.faranjit.meditory.features.home.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import com.faranjit.feedbacklist.base.viewBinding
+import com.faranjit.meditory.R
 import com.faranjit.meditory.base.BaseActivity
 import com.faranjit.meditory.base.BaseRecyclerAdapter
 import com.faranjit.meditory.databinding.ActivityHomeBinding
-import com.faranjit.meditory.features.home.presentation.adapter.MeditationsAdapter
+import com.faranjit.meditory.features.home.presentation.adapter.meditation.MeditationsAdapter
+import com.faranjit.meditory.features.home.presentation.adapter.story.StoriesAdapter
+import com.faranjit.meditory.features.home.presentation.adapter.story.StoryItemDecoration
 import com.faranjit.meditory.features.home.presentation.model.MeditationModel
+import com.faranjit.meditory.features.home.presentation.model.StoryModel
 import com.faranjit.meditory.observeLiveData
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,11 +30,21 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
         object : BaseRecyclerAdapter.OnItemClickListener<MeditationModel> {
 
             override fun onItemClick(item: MeditationModel) {
-                TODO("Not yet implemented")
+
+            }
+        }
+
+    private val onStoryItemClickListener =
+        object : BaseRecyclerAdapter.OnItemClickListener<StoryModel> {
+
+            override fun onItemClick(item: StoryModel) {
+
             }
         }
 
     private val meditationsAdapter = MeditationsAdapter(onMeditationItemClickListener)
+
+    private val storiesAdapter = StoriesAdapter(onStoryItemClickListener)
 
     companion object {
         fun newIntent(context: Context) = Intent(context, HomeActivity::class.java)
@@ -53,6 +68,16 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     private fun initUI() {
         binding.run {
             recyclerMeditations.adapter = meditationsAdapter
+
+            (recyclerStories.layoutManager as GridLayoutManager).spanCount = 2
+            recyclerStories.addItemDecoration(
+                StoryItemDecoration(
+                    resources.getDimensionPixelSize(R.dimen.margin_normal),
+                    resources.getDimensionPixelSize(R.dimen.margin_small),
+                    resources.getDimensionPixelSize(R.dimen.margin_medium)
+                )
+            )
+            recyclerStories.adapter = storiesAdapter
         }
 
         homeViewModel.getHomeData()
@@ -62,6 +87,10 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
         homeViewModel.run {
             observeLiveData(meditationsLiveData) {
                 meditationsAdapter.submitList(it)
+            }
+
+            observeLiveData(storiesLiveData) {
+                storiesAdapter.submitList(it)
             }
         }
     }

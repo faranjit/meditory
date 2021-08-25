@@ -1,4 +1,4 @@
-package com.faranjit.meditory.features.home.presentation.adapter
+package com.faranjit.meditory.features.home.presentation.adapter.meditation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

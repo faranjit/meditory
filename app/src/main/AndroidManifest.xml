@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Meditory">
+        android:theme="@style/Theme.Meditory"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".features.login.presentation.LoginActivity"
             android:screenOrientation="portrait">

@@ -56,6 +56,7 @@ val glideModule = module {
     fun provideRequestOptions(): RequestOptions {
         return RequestOptions()
             .placeholder(R.drawable.small)
+            .error(R.drawable.small)
     }
 
     single { provideRequestOptions() }

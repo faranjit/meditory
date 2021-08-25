@@ -3,12 +3,15 @@ package com.faranjit.meditory
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.webkit.WebSettings
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.faranjit.meditory.base.GlideInstance
 
 /**
@@ -35,8 +38,14 @@ fun View.hideSoftInput() {
 
 @BindingAdapter("url")
 fun setImageUrl(view: AppCompatImageView, url: String) {
+    val glideUrl = GlideUrl(
+        url,
+        LazyHeaders.Builder()
+            .addHeader("User-Agent", WebSettings.getDefaultUserAgent(view.context))
+            .build()
+    )
     GlideInstance.glide
-        .load(url)
+        .load(glideUrl)
         .placeholder(R.drawable.small)
         .into(view)
 }

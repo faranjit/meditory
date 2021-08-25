@@ -1,4 +1,4 @@
-package com.faranjit.meditory.features.home.presentation.adapter
+package com.faranjit.meditory.features.home.presentation.adapter.meditation
 
 import com.faranjit.meditory.base.BaseViewHolder
 import com.faranjit.meditory.databinding.ListItemMeditationBinding
