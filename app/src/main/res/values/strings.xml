@@ -4,4 +4,5 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="go_on">Continue</string>
+    <string name="meditations">Meditations</string>
 </resources>

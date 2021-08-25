@@ -1,0 +1,407 @@
+{
+  "isBannerEnabled": true,
+  "meditations": [
+    {
+      "title": "Meditation_1",
+      "subtitle": "Meditation_1_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/DFFF00",
+        "large": "https://via.placeholder.com/1000/DFFF00"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_2",
+      "subtitle": "Meditation_2_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFBF00",
+        "large": "https://via.placeholder.com/1000/FFBF00"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_3",
+      "subtitle": "Meditation_3_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/FF7F50",
+        "large": "https://via.placeholder.com/1000/FF7F50"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_4",
+      "subtitle": "Meditation_4_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/DE3163",
+        "large": "https://via.placeholder.com/1000/DE3163"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_5",
+      "subtitle": "Meditation_5_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/9FE2BF",
+        "large": "https://via.placeholder.com/1000/9FE2BF"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_6",
+      "subtitle": "Meditation_6_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/40E0D0",
+        "large": "https://via.placeholder.com/1000/40E0D0"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_7",
+      "subtitle": "Meditation_7_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/6495ED",
+        "large": "https://via.placeholder.com/1000/6495ED"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_8",
+      "subtitle": "Meditation_8_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/CCCCFF",
+        "large": "https://via.placeholder.com/1000/CCCCFF"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_9",
+      "subtitle": "Meditation_9_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/DFFF00",
+        "large": "https://via.placeholder.com/1000/DFFF00"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_10",
+      "subtitle": "Meditation_10_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFBF00",
+        "large": "https://via.placeholder.com/1000/FFBF00"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_11",
+      "subtitle": "Meditation_11_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/FF7F50",
+        "large": "https://via.placeholder.com/1000/FF7F50"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_12",
+      "subtitle": "Meditation_12_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/DE3163",
+        "large": "https://via.placeholder.com/1000/DE3163"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_13",
+      "subtitle": "Meditation_13_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/9FE2BF",
+        "large": "https://via.placeholder.com/1000/9FE2BF"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_14",
+      "subtitle": "Meditation_14_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/40E0D0",
+        "large": "https://via.placeholder.com/1000/40E0D0"
+      },
+      "releaseDate": "1614246146",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_15",
+      "subtitle": "Meditation_15_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/6495ED",
+        "large": "https://via.placeholder.com/1000/6495ED"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+      "title": "Meditation_16",
+      "subtitle": "Meditation_16_subtitle",
+      "image": {
+        "small": "https://via.placeholder.com/600/CCCCFF",
+        "large": "https://via.placeholder.com/1000/CCCCFF"
+      },
+      "releaseDate": "1619343746",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    }
+  ],
+  "stories": [
+    {
+      "name": "Story_1",
+      "category": "Category_1",
+      "image": {
+        "small": "https://via.placeholder.com/600/808000",
+        "large": "https://via.placeholder.com/1000/808000"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_2",
+      "category": "Category_2",
+      "image": {
+        "small": "https://via.placeholder.com/600/008080",
+        "large": "https://via.placeholder.com/1000/008080"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_3",
+      "category": "Category_3",
+      "image": {
+        "small": "https://via.placeholder.com/600/800080",
+        "large": "https://via.placeholder.com/1000/800080"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_4",
+      "category": "Category_4",
+      "image": {
+        "small": "https://via.placeholder.com/600/800000",
+        "large": "https://via.placeholder.com/1000/800000"
+      },
+      "date": "1619343746",
+      "text": ""
+    },
+    {
+      "name": "Story_5",
+      "category": "Category_5",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFFF00",
+        "large": "https://via.placeholder.com/1000/FFFF00"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_6",
+      "category": "Category_6",
+      "image": {
+        "small": "https://via.placeholder.com/600/C0C0C0",
+        "large": "https://via.placeholder.com/1000/C0C0C0"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_7",
+      "category": "Category_7",
+      "image": {
+        "small": "https://via.placeholder.com/600/808000",
+        "large": "https://via.placeholder.com/1000/808000"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_8",
+      "category": "Category_8",
+      "image": {
+        "small": "https://via.placeholder.com/600/008080",
+        "large": "https://via.placeholder.com/1000/008080"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_9",
+      "category": "Category_9",
+      "image": {
+        "small": "https://via.placeholder.com/600/800080",
+        "large": "https://via.placeholder.com/1000/800080"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_10",
+      "category": "Category_10",
+      "image": {
+        "small": "https://via.placeholder.com/600/800000",
+        "large": "https://via.placeholder.com/1000/800000"
+      },
+      "date": "1619343746",
+      "text": ""
+    },
+    {
+      "name": "Story_11",
+      "category": "Category_11",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFFF00",
+        "large": "https://via.placeholder.com/1000/FFFF00"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_12",
+      "category": "Category_12",
+      "image": {
+        "small": "https://via.placeholder.com/600/C0C0C0",
+        "large": "https://via.placeholder.com/1000/C0C0C0"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_13",
+      "category": "Category_13",
+      "image": {
+        "small": "https://via.placeholder.com/600/808000",
+        "large": "https://via.placeholder.com/1000/808000"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_14",
+      "category": "Category_14",
+      "image": {
+        "small": "https://via.placeholder.com/600/008080",
+        "large": "https://via.placeholder.com/1000/008080"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_15",
+      "category": "Category_15",
+      "image": {
+        "small": "https://via.placeholder.com/600/800080",
+        "large": "https://via.placeholder.com/1000/800080"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_16",
+      "category": "Category_16",
+      "image": {
+        "small": "https://via.placeholder.com/600/800000",
+        "large": "https://via.placeholder.com/1000/800000"
+      },
+      "date": "1619343746",
+      "text": ""
+    },
+    {
+      "name": "Story_17",
+      "category": "Category_17",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFFF00",
+        "large": "https://via.placeholder.com/1000/FFFF00"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_18",
+      "category": "Category_18",
+      "image": {
+        "small": "https://via.placeholder.com/600/C0C0C0",
+        "large": "https://via.placeholder.com/1000/C0C0C0"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_19",
+      "category": "Category_19",
+      "image": {
+        "small": "https://via.placeholder.com/600/808000",
+        "large": "https://via.placeholder.com/1000/808000"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_20",
+      "category": "Category_20",
+      "image": {
+        "small": "https://via.placeholder.com/600/008080",
+        "large": "https://via.placeholder.com/1000/008080"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_21",
+      "category": "Category_21",
+      "image": {
+        "small": "https://via.placeholder.com/600/800080",
+        "large": "https://via.placeholder.com/1000/800080"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "name": "Story_22",
+      "category": "Category_22",
+      "image": {
+        "small": "https://via.placeholder.com/600/800000",
+        "large": "https://via.placeholder.com/1000/800000"
+      },
+      "date": "1619343746",
+      "text": ""
+    },
+    {
+      "name": "Story_23",
+      "category": "Category_23",
+      "image": {
+        "small": "https://via.placeholder.com/600/FFFF00",
+        "large": "https://via.placeholder.com/1000/FFFF00"
+      },
+      "date": "1614246146",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+      "name": "Story_24",
+      "category": "Category_24",
+      "image": {
+        "small": "https://via.placeholder.com/600/C0C0C0",
+        "large": "https://via.placeholder.com/1000/C0C0C0"
+      },
+      "date": "1619343746",
+      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    }
+  ]
+}

@@ -3,6 +3,7 @@ package com.faranjit.meditory
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
+import com.faranjit.meditory.di.homeModule
 import com.faranjit.meditory.di.loginModule
 import com.faranjit.meditory.di.networkModule
 import com.faranjit.meditory.di.storageModule
@@ -24,7 +25,7 @@ class MeditoryApplication : MultiDexApplication() {
 
         startKoin {
             androidContext(this@MeditoryApplication)
-            modules(networkModule, loginModule, storageModule)
+            modules(networkModule, storageModule, loginModule, homeModule)
         }
     }
 }

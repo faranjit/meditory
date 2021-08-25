@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 /**
@@ -16,20 +17,22 @@ abstract class BaseViewModel : ViewModel() {
     val loadingLiveData: LiveData<Boolean>
         get() = loading
 
-    fun <T> launchDataLoad(block: suspend () -> T?): T? {
-        loading.value = true
-
-        var res: T? = null
+    /**
+     * ViewModel uzerinden async islem baslatir.
+     *
+     * @param block CoroutineScope icinde gerceklesen async operasyon.
+     */
+    fun runAsync(block: suspend CoroutineScope.() -> Unit) {
         viewModelScope.launch {
             try {
-                res = block()
-            } catch (error: Throwable) {
-                Log.e(javaClass.canonicalName, error.message, error)
+//                _spinnerLiveData.value = true
+
+                block.invoke(this)
+            } catch (t: Throwable) {
+                Log.e(this@BaseViewModel::class.java.canonicalName, t.message, t)
             } finally {
-                loading.value = false
+//                _spinnerLiveData.value = false
             }
         }
-
-        return res
     }
 }

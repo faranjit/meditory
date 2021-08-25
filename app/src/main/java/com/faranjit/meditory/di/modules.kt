@@ -2,7 +2,15 @@ package com.faranjit.meditory.di
 
 import android.content.Context
 import com.faranjit.meditory.BuildConfig
+import com.faranjit.meditory.base.Executor
+import com.faranjit.meditory.base.RequestExecutor
 import com.faranjit.meditory.base.SharedPrefs
+import com.faranjit.meditory.features.home.data.HomeApi
+import com.faranjit.meditory.features.home.data.HomeDataRepository
+import com.faranjit.meditory.features.home.data.datasource.HomeRemoteDataSource
+import com.faranjit.meditory.features.home.domain.GetHomeData
+import com.faranjit.meditory.features.home.domain.HomeRepository
+import com.faranjit.meditory.features.home.presentation.HomeViewModel
 import com.faranjit.meditory.features.login.data.LoginDataRepository
 import com.faranjit.meditory.features.login.data.LoginLocalDataSource
 import com.faranjit.meditory.features.login.domain.LoginRepository
@@ -27,6 +35,15 @@ val networkModule = module {
     single { createOkHttp() }
     single { createJson() }
     single { createRetrofit(get(), get()) }
+    single<Executor> { RequestExecutor() }
+}
+
+val storageModule = module {
+    fun provideStorage(context: Context) = SharedPrefs(
+        context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
+    )
+
+    single { provideStorage(get()) }
 }
 
 val loginModule = module {
@@ -47,12 +64,23 @@ val loginModule = module {
     viewModel { provideLoginViewModel(get()) }
 }
 
-val storageModule = module {
-    fun provideStorage(context: Context) = SharedPrefs(
-        context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
-    )
+val homeModule = module {
+    fun provideHomeViewModel(getHomeData: GetHomeData) = HomeViewModel(getHomeData)
 
-    single { provideStorage(get()) }
+    fun provideHomeApi(retrofit: Retrofit) = retrofit.create(HomeApi::class.java)
+
+    fun provideHomeRemoteDataSource(shortlyApi: HomeApi, executor: Executor) =
+        HomeRemoteDataSource(shortlyApi, executor)
+
+    factory<HomeRepository> {
+        HomeDataRepository(
+            provideHomeRemoteDataSource(provideHomeApi(get()), get())
+        )
+    }
+
+    factory { GetHomeData(get()) }
+
+    viewModel { provideHomeViewModel(get()) }
 }
 
 private fun createOkHttp() = OkHttpClient.Builder()

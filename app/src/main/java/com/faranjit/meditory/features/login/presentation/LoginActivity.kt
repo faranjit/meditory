@@ -5,6 +5,8 @@ import android.widget.Toast
 import com.faranjit.feedbacklist.base.viewBinding
 import com.faranjit.meditory.base.BaseActivity
 import com.faranjit.meditory.databinding.ActivityLoginBinding
+import com.faranjit.meditory.features.home.presentation.HomeActivity
+import com.faranjit.meditory.hideSoftInput
 import com.faranjit.meditory.observeLiveData
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +41,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
             }
 
             btnSignin.setOnClickListener {
+                it.hideSoftInput()
                 loginViewModel.signIn()
             }
         }
@@ -51,7 +54,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
         observeLiveData(loginViewModel.signinSuccessLiveData) {
             if (it) {
-                Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                startActivity(HomeActivity.newIntent(this))
             } else {
                 Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
             }

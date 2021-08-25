@@ -10,17 +10,22 @@ import kotlinx.coroutines.withContext
  * Her usecase'in kendi aldigi parametreleri ve dondugu response vardir.
  * Bu bilgiler usecase olusturulurken base class'a verilmelidir.
  */
-abstract class BaseRequestUseCase<Response, Params> {
+abstract class BaseRequestUseCase<Response : BaseResponse, Params> {
 
     /**
      * Usecase'in yaptigi isi hazirlar, calismaya hazir hale getirir
      */
-    abstract suspend fun buildUseCase(params: Params): Response
+    abstract suspend fun buildUseCase(params: Params? = null): ResponseWrapper<Response>
 
     /**
      * Usecase'i, verilen parametrelerse calistirir belirtilen tipte sonucu doner.
      */
-    suspend fun execute(params: Params): Response = withContext(Dispatchers.IO) {
-        buildUseCase(params)
+    open suspend fun execute(params: Params? = null): Response {
+        return withContext(Dispatchers.IO) {
+            when (val wrapped = buildUseCase(params)) {
+                is ResponseWrapper.Success -> wrapped.data
+                else -> throw RuntimeException(wrapped.toString())
+            }
+        }
     }
 }
