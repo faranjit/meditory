@@ -49,3 +49,8 @@ fun setImageUrl(view: AppCompatImageView, url: String) {
         .placeholder(R.drawable.small)
         .into(view)
 }
+
+@BindingAdapter("visibility")
+fun setVisibility(view: View, visible: Boolean) {
+    view.visibility = if (visible) View.VISIBLE else View.GONE
+}

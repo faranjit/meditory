@@ -1,5 +1,6 @@
 package com.faranjit.meditory.features.home.presentation
 
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.faranjit.meditory.base.BaseViewModel
@@ -14,6 +15,8 @@ class HomeViewModel(
     private val getHomeData: GetHomeData
 ) : BaseViewModel() {
 
+    val bannerVisible = ObservableBoolean()
+
     private val meditations = MutableLiveData<List<MeditationModel>>()
     val meditationsLiveData: LiveData<List<MeditationModel>>
         get() = meditations
@@ -25,6 +28,9 @@ class HomeViewModel(
     fun getHomeData() {
         runAsync {
             val homeResponse = getHomeData.execute(Unit)
+
+            bannerVisible.set(homeResponse.isBannerEnabled)
+
             meditations.value = homeResponse.meditations.map {
                 it.toMeditationModel()
             }
