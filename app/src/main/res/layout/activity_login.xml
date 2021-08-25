@@ -1,18 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <variable
+            name="viewModel"
+            type="com.faranjit.meditory.features.login.presentation.LoginViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="80"
+        android:background="@drawable/bg_login"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/status_bar_height"
+            android:background="@color/white"
+            android:padding="@dimen/padding_normal"
+            tools:context=".features.login.presentation.LoginActivity">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_sign_in"
+                style="@style/BoldTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in"
+                android:textColor="@color/dark_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_username"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:hint="@string/username"
+                android:text="@={viewModel.usernameObservable}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_sign_in" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_password"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:hint="@string/password"
+                android:text="@={viewModel.passwordObservable}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_username" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/edt_password"
+                app:layout_constraintEnd_toEndOf="@id/edt_password"
+                app:layout_constraintTop_toTopOf="@id/edt_password"
+                app:srcCompat="@drawable/ic_eye_icon" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signin"
+                style="@style/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:background="@drawable/bg_blue_rounded"
+                android:text="@string/go_on"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>
