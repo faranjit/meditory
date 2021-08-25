@@ -9,6 +9,8 @@ import com.faranjit.meditory.R
 import com.faranjit.meditory.base.BaseActivity
 import com.faranjit.meditory.base.BaseRecyclerAdapter
 import com.faranjit.meditory.databinding.ActivityHomeBinding
+import com.faranjit.meditory.features.detail.presentation.DetailActivity
+import com.faranjit.meditory.features.detail.presentation.toDetailModel
 import com.faranjit.meditory.features.home.presentation.adapter.meditation.MeditationsAdapter
 import com.faranjit.meditory.features.home.presentation.adapter.story.StoriesAdapter
 import com.faranjit.meditory.features.home.presentation.adapter.story.StoryItemDecoration
@@ -22,6 +24,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  */
 class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
+    companion object {
+        fun newIntent(context: Context) = Intent(context, HomeActivity::class.java)
+    }
+
     private val binding by viewBinding(ActivityHomeBinding::inflate)
 
     private val homeViewModel: HomeViewModel by viewModel()
@@ -30,7 +36,12 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
         object : BaseRecyclerAdapter.OnItemClickListener<MeditationModel> {
 
             override fun onItemClick(item: MeditationModel) {
-
+                startActivity(
+                    DetailActivity.newIntent(
+                        this@HomeActivity,
+                        item.toDetailModel()
+                    )
+                )
             }
         }
 
@@ -38,17 +49,18 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
         object : BaseRecyclerAdapter.OnItemClickListener<StoryModel> {
 
             override fun onItemClick(item: StoryModel) {
-
+                startActivity(
+                    DetailActivity.newIntent(
+                        this@HomeActivity,
+                        item.toDetailModel()
+                    )
+                )
             }
         }
 
     private val meditationsAdapter = MeditationsAdapter(onMeditationItemClickListener)
 
     private val storiesAdapter = StoriesAdapter(onStoryItemClickListener)
-
-    companion object {
-        fun newIntent(context: Context) = Intent(context, HomeActivity::class.java)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

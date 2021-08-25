@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.faranjit.meditory.features.detail.presentation.DetailViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:bgUrl="@{viewModel.detail.backgroundUrl}"
+        tools:background="@drawable/bg_detail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_normal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_huge"
+                android:scaleType="fitXY"
+                app:imgRes="@{viewModel.playIcon}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_play" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_title"
+                style="@style/LargeBoldTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{viewModel.detail.title}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_play"
+                tools:text="@string/meditations" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_content"
+                style="@style/NormalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:gravity="center_horizontal"
+                android:text="@{viewModel.detail.content}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_title"
+                tools:text="asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfhasfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh asfgjlhdsfg sdgdfgjdf sdgdsfjgdpfs asdgkdfh" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_date"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/bg_white_rounded"
+                android:paddingStart="@dimen/padding_normal"
+                android:paddingTop="@dimen/padding_xsmall"
+                android:paddingEnd="@dimen/padding_normal"
+                android:paddingBottom="@dimen/padding_xsmall"
+                android:textAllCaps="false"
+                android:textColor="@color/white_70"
+                app:date="@{viewModel.detail.date}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_content"
+                tools:text="@string/meditations" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

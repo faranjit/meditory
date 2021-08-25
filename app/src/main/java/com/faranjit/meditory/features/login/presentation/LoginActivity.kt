@@ -55,6 +55,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
         observeLiveData(loginViewModel.signinSuccessLiveData) {
             if (it) {
                 startActivity(HomeActivity.newIntent(this))
+                finish()
             } else {
                 Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
             }

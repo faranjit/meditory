@@ -10,6 +10,7 @@ import com.faranjit.meditory.R
 import com.faranjit.meditory.base.Executor
 import com.faranjit.meditory.base.RequestExecutor
 import com.faranjit.meditory.base.SharedPrefs
+import com.faranjit.meditory.features.detail.presentation.DetailViewModel
 import com.faranjit.meditory.features.home.data.HomeApi
 import com.faranjit.meditory.features.home.data.HomeDataRepository
 import com.faranjit.meditory.features.home.data.datasource.HomeLocalDataSource
@@ -115,6 +116,10 @@ val homeModule = module {
     factory { GetUsername(get()) }
 
     viewModel { provideHomeViewModel(get(), get()) }
+}
+
+val detailModule = module {
+    viewModel { DetailViewModel() }
 }
 
 private fun createOkHttp() = OkHttpClient.Builder()

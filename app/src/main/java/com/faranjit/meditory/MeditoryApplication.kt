@@ -27,7 +27,8 @@ class MeditoryApplication : MultiDexApplication() {
                 glideModule,
                 storageModule,
                 loginModule,
-                homeModule
+                homeModule,
+                detailModule
             )
         }
     }

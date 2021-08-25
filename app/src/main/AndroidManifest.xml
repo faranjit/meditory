@@ -27,6 +27,12 @@
         <activity
             android:name=".features.home.presentation.HomeActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".features.detail.presentation.DetailActivity"
+            android:parentActivityName=".features.home.presentation.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Meditory.Detail" />
     </application>
 
 </manifest>

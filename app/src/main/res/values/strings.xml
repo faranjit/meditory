@@ -7,4 +7,6 @@
     <string name="meditations">Meditations</string>
     <string name="stories">Stories</string>
     <string name="banner_text">Look, %s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
+    <string name="meditation_detail">Meditation Detail</string>
+    <string name="story_detail">Story Detail</string>
 </resources>
