@@ -1,7 +1,6 @@
 package com.faranjit.meditory.features.home.presentation.model
 
 import com.faranjit.meditory.base.BaseListItem
-import com.faranjit.meditory.features.home.data.response.Image
 
 /**
  * Created by Bulent Turkmen on 25.08.2021.
@@ -9,7 +8,7 @@ import com.faranjit.meditory.features.home.data.response.Image
 data class StoryModel(
     val name: String,
     val category: String,
-    val image: Image,
+    val image: ImageModel,
     val date: String,
     val text: String
 ) : BaseListItem<StoryModel>() {

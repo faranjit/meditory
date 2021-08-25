@@ -60,7 +60,7 @@ class Story(
      * Story response objesini ui'da kullanilacak modele cevirir.
      */
     fun toStoryModel() = StoryModel(
-        name, category, image, date, text
+        name, category, image.toImageModel(), date, text
     )
 }
 
