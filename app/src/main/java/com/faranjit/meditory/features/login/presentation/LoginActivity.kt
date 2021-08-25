@@ -15,7 +15,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
     private val binding by viewBinding(ActivityLoginBinding::inflate)
 
-    private val homeViewModel: LoginViewModel by viewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,32 +24,32 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
         observe()
     }
 
-    override fun provideViewModel() = homeViewModel
+    override fun provideViewModel() = loginViewModel
 
     override fun provideBinding() = binding
 
     override fun bindViewModel(binding: ActivityLoginBinding) {
-        binding.viewModel = homeViewModel
+        binding.viewModel = loginViewModel
     }
 
     private fun initUI() {
         binding.run {
             imgVisibility.setOnClickListener {
-                homeViewModel.showOrHidePassword()
+                loginViewModel.showOrHidePassword()
             }
 
             btnSignin.setOnClickListener {
-                homeViewModel.signIn()
+                loginViewModel.signIn()
             }
         }
     }
 
     private fun observe() {
-        observeLiveData(homeViewModel.passwordVisibilityLiveData) {
+        observeLiveData(loginViewModel.passwordVisibilityLiveData) {
             binding.edtPassword.transformationMethod = it
         }
 
-        observeLiveData(homeViewModel.signinSuccessLiveData) {
+        observeLiveData(loginViewModel.signinSuccessLiveData) {
             if (it) {
                 Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
             } else {
