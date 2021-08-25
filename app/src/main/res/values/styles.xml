@@ -17,6 +17,16 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="MediumTextStyle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="fontWeight">400</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SmallTextStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="fontWeight">400</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <style name="BoldTextStyle" parent="TextAppearance.AppCompat.Large">
         <item name="fontWeight">700</item>
         <item name="android:textStyle">bold</item>

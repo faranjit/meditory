@@ -1,7 +1,12 @@
 package com.faranjit.meditory.di
 
+import android.app.Application
 import android.content.Context
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
+import com.bumptech.glide.request.RequestOptions
 import com.faranjit.meditory.BuildConfig
+import com.faranjit.meditory.R
 import com.faranjit.meditory.base.Executor
 import com.faranjit.meditory.base.RequestExecutor
 import com.faranjit.meditory.base.SharedPrefs
@@ -21,6 +26,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -36,6 +42,25 @@ val networkModule = module {
     single { createJson() }
     single { createRetrofit(get(), get()) }
     single<Executor> { RequestExecutor() }
+}
+
+val glideModule = module {
+    fun provideRequestManager(
+        application: Application,
+        requestOptions: RequestOptions
+    ): RequestManager {
+        return Glide.with(application)
+            .setDefaultRequestOptions(requestOptions)
+    }
+
+    fun provideRequestOptions(): RequestOptions {
+        return RequestOptions()
+            .placeholder(R.drawable.small)
+    }
+
+    single { provideRequestOptions() }
+
+    single { provideRequestManager(androidApplication(), get()) }
 }
 
 val storageModule = module {

@@ -1,6 +1,9 @@
 package com.faranjit.meditory.features.home.data.response
 
 import com.faranjit.meditory.base.BaseResponse
+import com.faranjit.meditory.features.home.presentation.model.ImageModel
+import com.faranjit.meditory.features.home.presentation.model.MeditationModel
+import com.faranjit.meditory.features.home.presentation.model.StoryModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -29,7 +32,15 @@ class Meditation(
     val releaseDate: String,
     @SerialName("content")
     val content: String
-)
+) {
+
+    /**
+     * Meditation response objesini ui'da kullanilacak modele cevirir.
+     */
+    fun toMeditationModel() = MeditationModel(
+        title, subtitle, image.toImageModel(), releaseDate, content
+    )
+}
 
 @Serializable
 class Story(
@@ -43,7 +54,15 @@ class Story(
     val date: String,
     @SerialName("text")
     val text: String
-)
+) {
+
+    /**
+     * Story response objesini ui'da kullanilacak modele cevirir.
+     */
+    fun toStoryModel() = StoryModel(
+        name, category, image, date, text
+    )
+}
 
 @Serializable
 class Image(
@@ -51,4 +70,12 @@ class Image(
     val small: String,
     @SerialName("large")
     val large: String
-)
+) {
+
+    /**
+     * Image response objesini ui'da kullanilacak modele cevirir.
+     */
+    fun toImageModel() = ImageModel(
+        small, large
+    )
+}
