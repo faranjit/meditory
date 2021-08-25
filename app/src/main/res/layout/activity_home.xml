@@ -54,7 +54,7 @@
                 android:drawableStart="@drawable/ic_night"
                 android:drawablePadding="@dimen/margin_medium"
                 android:padding="@dimen/margin_medium"
-                android:text="@string/banner_text"
+                android:text="@{viewModel.bannerText}"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -6,5 +6,5 @@
     <string name="go_on">Continue</string>
     <string name="meditations">Meditations</string>
     <string name="stories">Stories</string>
-    <string name="banner_text">Look. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
+    <string name="banner_text">Look, %s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
 </resources>

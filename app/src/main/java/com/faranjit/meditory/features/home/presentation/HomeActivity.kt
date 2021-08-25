@@ -81,6 +81,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
         }
 
         homeViewModel.getHomeData()
+        homeViewModel.formatUsername(getString(R.string.banner_text))
     }
 
     private fun observe() {

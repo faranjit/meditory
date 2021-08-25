@@ -12,8 +12,10 @@ import com.faranjit.meditory.base.RequestExecutor
 import com.faranjit.meditory.base.SharedPrefs
 import com.faranjit.meditory.features.home.data.HomeApi
 import com.faranjit.meditory.features.home.data.HomeDataRepository
+import com.faranjit.meditory.features.home.data.datasource.HomeLocalDataSource
 import com.faranjit.meditory.features.home.data.datasource.HomeRemoteDataSource
 import com.faranjit.meditory.features.home.domain.GetHomeData
+import com.faranjit.meditory.features.home.domain.GetUsername
 import com.faranjit.meditory.features.home.domain.HomeRepository
 import com.faranjit.meditory.features.home.presentation.HomeViewModel
 import com.faranjit.meditory.features.login.data.LoginDataRepository
@@ -91,22 +93,28 @@ val loginModule = module {
 }
 
 val homeModule = module {
-    fun provideHomeViewModel(getHomeData: GetHomeData) = HomeViewModel(getHomeData)
+    fun provideHomeViewModel(getHomeData: GetHomeData, getUsername: GetUsername) =
+        HomeViewModel(getHomeData, getUsername)
 
     fun provideHomeApi(retrofit: Retrofit) = retrofit.create(HomeApi::class.java)
 
     fun provideHomeRemoteDataSource(shortlyApi: HomeApi, executor: Executor) =
         HomeRemoteDataSource(shortlyApi, executor)
 
+    fun provideHomeLocalDataSource(sharedPrefs: SharedPrefs) = HomeLocalDataSource(sharedPrefs)
+
     factory<HomeRepository> {
         HomeDataRepository(
-            provideHomeRemoteDataSource(provideHomeApi(get()), get())
+            provideHomeRemoteDataSource(provideHomeApi(get()), get()),
+            provideHomeLocalDataSource(get())
         )
     }
 
     factory { GetHomeData(get()) }
 
-    viewModel { provideHomeViewModel(get()) }
+    factory { GetUsername(get()) }
+
+    viewModel { provideHomeViewModel(get(), get()) }
 }
 
 private fun createOkHttp() = OkHttpClient.Builder()

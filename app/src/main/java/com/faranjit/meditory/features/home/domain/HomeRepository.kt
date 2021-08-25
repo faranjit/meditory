@@ -12,4 +12,9 @@ interface HomeRepository {
      * Anasayfada gosterilecek meditasyon ve story bilgilerini getirir.
      */
     suspend fun getHomeData(): ResponseWrapper<HomeResponse>
+
+    /**
+     * Login'de kaydedilen username'i getirir.
+     */
+    fun getUsername(): String?
 }
