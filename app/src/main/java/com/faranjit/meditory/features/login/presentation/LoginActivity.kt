@@ -1,6 +1,7 @@
 package com.faranjit.meditory.features.login.presentation
 
 import android.os.Bundle
+import android.widget.Toast
 import com.faranjit.feedbacklist.base.viewBinding
 import com.faranjit.meditory.base.BaseActivity
 import com.faranjit.meditory.databinding.ActivityLoginBinding
@@ -18,13 +19,9 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.btnSignin.setOnClickListener {
-            homeViewModel.signIn()
-        }
 
-        observeLiveData(homeViewModel.signinSuccessLiveData) {
-
-        }
+        initUI()
+        observe()
     }
 
     override fun provideViewModel() = homeViewModel
@@ -33,5 +30,31 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
     override fun bindViewModel(binding: ActivityLoginBinding) {
         binding.viewModel = homeViewModel
+    }
+
+    private fun initUI() {
+        binding.run {
+            imgVisibility.setOnClickListener {
+                homeViewModel.showOrHidePassword()
+            }
+
+            btnSignin.setOnClickListener {
+                homeViewModel.signIn()
+            }
+        }
+    }
+
+    private fun observe() {
+        observeLiveData(homeViewModel.passwordVisibilityLiveData) {
+            binding.edtPassword.transformationMethod = it
+        }
+
+        observeLiveData(homeViewModel.signinSuccessLiveData) {
+            if (it) {
+                Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
