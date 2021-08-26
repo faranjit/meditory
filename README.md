@@ -34,6 +34,11 @@ Some dummy meditation and story items are listed. Used horizontal recyclerview f
 ### Detail
 It displays some information about the selected meditation or story. Background of this activity is changing according to background url of meditation or story item. And there is a media player. When you hit the play button a relaxing ocean sound will be playing.
 
+Each feature has 3 main packages
+* Presentation: For ui classes.
+* Domain: Contains repository and usecases which bridge between ui and data source.
+* Data: Contains data sources. Data can be taken from remote or local data sources.
+
 ## Running
 * Open the project in Android Studio
 * Hit the Run button 
