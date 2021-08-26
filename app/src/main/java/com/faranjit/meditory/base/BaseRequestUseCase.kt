@@ -20,12 +20,9 @@ abstract class BaseRequestUseCase<Response : BaseResponse, Params> {
     /**
      * Usecase'i, verilen parametrelerse calistirir belirtilen tipte sonucu doner.
      */
-    open suspend fun execute(params: Params? = null): Response {
+    open suspend fun execute(params: Params? = null): ResponseWrapper<Response> {
         return withContext(Dispatchers.IO) {
-            when (val wrapped = buildUseCase(params)) {
-                is ResponseWrapper.Success -> wrapped.data
-                else -> throw RuntimeException(wrapped.toString())
-            }
+            buildUseCase(params)
         }
     }
 }

@@ -9,4 +9,9 @@
     <string name="banner_text">Look, %s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
     <string name="meditation_detail">Meditation Detail</string>
     <string name="story_detail">Story Detail</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="missing_credentials">Username or password is wrong.</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
 </resources>

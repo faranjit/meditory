@@ -5,6 +5,8 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.faranjit.meditory.base.BaseViewModel
+import com.faranjit.meditory.base.ResponseWrapper
+import com.faranjit.meditory.features.home.data.response.HomeResponse
 import com.faranjit.meditory.features.home.domain.GetHomeData
 import com.faranjit.meditory.features.home.domain.GetUsername
 import com.faranjit.meditory.features.home.presentation.model.MeditationModel
@@ -29,6 +31,14 @@ class HomeViewModel(
     val storiesLiveData: LiveData<List<StoryModel>>
         get() = stories
 
+    private val error = MutableLiveData<String>()
+    val errorLiveData: LiveData<String>
+        get() = error
+
+    private fun showError(message: String) {
+        error.value = message
+    }
+
     /**
      * Kaydedilmis username'i local storage'dan getirir ve formatlar.
      */
@@ -43,17 +53,22 @@ class HomeViewModel(
      */
     fun getHomeData() {
         runAsync {
-            val homeResponse = getHomeData.execute(Unit)
+            when (val response = getHomeData.execute(Unit)) {
+                is ResponseWrapper.Success<HomeResponse> -> {
+                    val homeResponse = response.data
+                    bannerVisible.set(homeResponse.isBannerEnabled)
 
-            bannerVisible.set(homeResponse.isBannerEnabled)
+                    meditations.value = homeResponse.meditations.map {
+                        it.toMeditationModel()
+                    }
 
-            meditations.value = homeResponse.meditations.map {
-                it.toMeditationModel()
+                    stories.value = homeResponse.stories.map {
+                        it.toStoryModel()
+                    }
+                }
+                is ResponseWrapper.ServiceError -> showError(response.errorMessage)
             }
 
-            stories.value = homeResponse.stories.map {
-                it.toStoryModel()
-            }
         }
     }
 }

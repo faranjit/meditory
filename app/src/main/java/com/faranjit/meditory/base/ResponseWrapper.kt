@@ -15,6 +15,6 @@ sealed class ResponseWrapper<out T : BaseResponse> {
      */
     data class ServiceError(
         val httpCode: Int? = null,
-        val errorMessage: String? = null
+        val errorMessage: String
     ) : ResponseWrapper<Nothing>()
 }

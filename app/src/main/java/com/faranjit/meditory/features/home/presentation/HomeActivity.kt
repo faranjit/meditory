@@ -4,10 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.faranjit.feedbacklist.base.viewBinding
 import com.faranjit.meditory.R
-import com.faranjit.meditory.base.BaseActivity
-import com.faranjit.meditory.base.BaseRecyclerAdapter
+import com.faranjit.meditory.base.*
 import com.faranjit.meditory.databinding.ActivityHomeBinding
 import com.faranjit.meditory.features.detail.presentation.DetailActivity
 import com.faranjit.meditory.features.detail.presentation.toDetailModel
@@ -29,8 +27,6 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     }
 
     private val binding by viewBinding(ActivityHomeBinding::inflate)
-
-    private val homeViewModel: HomeViewModel by viewModel()
 
     private val onMeditationItemClickListener =
         object : BaseRecyclerAdapter.OnItemClickListener<MeditationModel> {
@@ -67,14 +63,16 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
         initUI()
         observe()
+        viewModel.getHomeData()
+        viewModel.formatUsername(getString(R.string.banner_text))
     }
 
-    override fun provideViewModel() = homeViewModel
+    override fun provideViewModel() = viewModel<HomeViewModel>().value
 
     override fun provideBinding() = binding
 
     override fun bindViewModel(binding: ActivityHomeBinding) {
-        binding.viewModel = homeViewModel
+        binding.viewModel = viewModel
     }
 
     private fun initUI() {
@@ -91,19 +89,27 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
             )
             recyclerStories.adapter = storiesAdapter
         }
-
-        homeViewModel.getHomeData()
-        homeViewModel.formatUsername(getString(R.string.banner_text))
     }
 
     private fun observe() {
-        homeViewModel.run {
+        viewModel.run {
             observeLiveData(meditationsLiveData) {
                 meditationsAdapter.submitList(it)
             }
 
             observeLiveData(storiesLiveData) {
                 storiesAdapter.submitList(it)
+            }
+
+            observeLiveData(errorLiveData) {
+                showDialog(
+                    DialogModel(
+                        getString(R.string.error), it,
+                        DialogButton(getString(R.string.ok)) {
+                            finish()
+                        }
+                    )
+                )
             }
         }
     }

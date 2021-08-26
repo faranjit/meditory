@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import com.faranjit.feedbacklist.base.viewBinding
 import com.faranjit.meditory.R
 import com.faranjit.meditory.base.BaseActivity
+import com.faranjit.meditory.base.viewBinding
 import com.faranjit.meditory.databinding.ActivityDetailBinding
 import com.faranjit.meditory.observeLiveData
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,8 +31,6 @@ class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBinding>() {
 
     private val binding by viewBinding(ActivityDetailBinding::inflate)
 
-    private val detailViewModel: DetailViewModel by viewModel()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,7 +39,7 @@ class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBinding>() {
 
         initUI()
         observe()
-        detailViewModel.parseIntent(intent)
+        viewModel.parseIntent(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -54,34 +52,32 @@ class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBinding>() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun provideViewModel() = detailViewModel
+    override fun provideViewModel() = viewModel<DetailViewModel>().value
 
     override fun provideBinding() = binding
 
     override fun bindViewModel(binding: ActivityDetailBinding) {
-        binding.viewModel = detailViewModel
+        binding.viewModel = viewModel
     }
 
     override fun onDestroy() {
-        detailViewModel.clearMediaPlayer()
+        viewModel.clearMediaPlayer()
         super.onDestroy()
     }
 
     private fun initUI() {
-        binding.run {
-            imgPlay.setOnClickListener {
-                detailViewModel.playOrPauseAudio()
-            }
+        binding.imgPlay.setOnClickListener {
+            viewModel.playOrPauseAudio()
         }
     }
 
     private fun observe() {
-        detailViewModel.run {
+        viewModel.run {
             observeLiveData(detailTypeLiveData) {
-                if (it == DetailType.MEDITATION) {
-                    title = getString(R.string.meditation_detail)
+                title = if (it == DetailType.MEDITATION) {
+                    getString(R.string.meditation_detail)
                 } else {
-                    title = getString(R.string.story_detail)
+                    getString(R.string.story_detail)
                 }
             }
         }

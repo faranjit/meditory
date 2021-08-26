@@ -23,7 +23,9 @@ class RequestExecutor : Executor {
                             errorMessage = t.message()
                         )
                     }
-                    else -> ResponseWrapper.ServiceError(errorMessage = t.message)
+                    else -> ResponseWrapper.ServiceError(
+                        errorMessage = t.message ?: "An error occurred"
+                    )
                 }
             }
         }

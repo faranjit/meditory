@@ -1,4 +1,4 @@
-package com.faranjit.feedbacklist.base
+package com.faranjit.meditory.base
 
 import android.os.Looper
 import android.view.LayoutInflater

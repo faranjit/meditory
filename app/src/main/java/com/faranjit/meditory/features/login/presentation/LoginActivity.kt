@@ -1,9 +1,11 @@
 package com.faranjit.meditory.features.login.presentation
 
 import android.os.Bundle
-import android.widget.Toast
-import com.faranjit.feedbacklist.base.viewBinding
+import com.faranjit.meditory.R
 import com.faranjit.meditory.base.BaseActivity
+import com.faranjit.meditory.base.DialogButton
+import com.faranjit.meditory.base.DialogModel
+import com.faranjit.meditory.base.viewBinding
 import com.faranjit.meditory.databinding.ActivityLoginBinding
 import com.faranjit.meditory.features.home.presentation.HomeActivity
 import com.faranjit.meditory.hideSoftInput
@@ -17,8 +19,6 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
     private val binding by viewBinding(ActivityLoginBinding::inflate)
 
-    private val loginViewModel: LoginViewModel by viewModel()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,38 +26,49 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
         observe()
     }
 
-    override fun provideViewModel() = loginViewModel
+    override fun provideViewModel() = viewModel<LoginViewModel>().value
 
     override fun provideBinding() = binding
 
     override fun bindViewModel(binding: ActivityLoginBinding) {
-        binding.viewModel = loginViewModel
+        binding.viewModel = viewModel
     }
 
     private fun initUI() {
         binding.run {
             imgVisibility.setOnClickListener {
-                loginViewModel.showOrHidePassword()
+                viewModel?.showOrHidePassword()
             }
 
             btnSignin.setOnClickListener {
                 it.hideSoftInput()
-                loginViewModel.signIn()
+                viewModel?.signIn()
             }
         }
     }
 
     private fun observe() {
-        observeLiveData(loginViewModel.passwordVisibilityLiveData) {
+        observeLiveData(viewModel.passwordVisibilityLiveData) {
             binding.edtPassword.transformationMethod = it
         }
 
-        observeLiveData(loginViewModel.signinSuccessLiveData) {
+        observeLiveData(viewModel.signinSuccessLiveData) {
             if (it) {
                 startActivity(HomeActivity.newIntent(this))
                 finish()
             } else {
-                Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
+                showDialog(
+                    DialogModel(
+                        getString(R.string.error),
+                        getString(R.string.missing_credentials),
+                        DialogButton(
+                            getString(R.string.retry)
+                        ),
+                        DialogButton(getString(R.string.cancel)) {
+                            finish()
+                        }
+                    )
+                )
             }
         }
     }
