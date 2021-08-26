@@ -36,10 +36,6 @@ class LoginViewModel(
     val passwordVisibilityLiveData: LiveData<TransformationMethod>
         get() = passwordVisibility
 
-    init {
-        passwordVisibility.value = PasswordTransformationMethod.getInstance()
-    }
-
     private fun isUserNameValid(): Boolean =
         usernameObservable.getOrDefault("").length > MIN_USER_NAME_LENGTH
 

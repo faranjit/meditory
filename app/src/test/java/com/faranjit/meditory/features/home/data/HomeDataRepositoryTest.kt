@@ -1,6 +1,7 @@
 package com.faranjit.meditory.features.home.data
 
 import com.faranjit.meditory.BaseUnitTest
+import com.faranjit.meditory.features.home.data.datasource.HomeLocalDataSource
 import com.faranjit.meditory.features.home.data.datasource.HomeRemoteDataSource
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
@@ -16,6 +17,9 @@ class HomeDataRepositoryTest : BaseUnitTest() {
     @Mock
     private lateinit var remoteDataSource: HomeRemoteDataSource
 
+    @Mock
+    private lateinit var localDataSource: HomeLocalDataSource
+
     @InjectMocks
     private lateinit var repository: HomeDataRepository
 
@@ -29,6 +33,19 @@ class HomeDataRepositoryTest : BaseUnitTest() {
 
             // Then
             verify(remoteDataSource).getHomeData()
+        }
+    }
+
+    @Test
+    fun `should getUsername be called`() {
+        runBlocking {
+            // Given
+
+            // When
+            repository.getUsername()
+
+            // Then
+            verify(localDataSource).getUsername()
         }
     }
 }
