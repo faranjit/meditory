@@ -63,16 +63,6 @@ dependencies {
     testImplementation "io.insert-koin:koin-test:3.0.1-beta-1"
     testImplementation "io.insert-koin:koin-test-junit4:3.0.1-beta-1"
 
-    // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-
-    // Room
-    implementation "androidx.room:room-runtime:2.3.0"
-    implementation "androidx.room:room-ktx:2.3.0"
-    kapt "androidx.room:room-compiler:2.3.0"
-    testImplementation "androidx.room:room-testing:2.3.0"
-
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
